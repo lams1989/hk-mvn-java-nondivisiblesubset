@@ -1,20 +1,24 @@
 package com.lams1989.nondivisiblesubset;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 public class NonDivisibleSubset {
-	public static void nonDivisibleSubset(int k, List<Integer> s) {
+	public static int nonDivisibleSubset(int k, List<Integer> s) {
 
-
-		List<Integer> a = new ArrayList<Integer>();
+		int count = 0;
+		TreeSet<Integer> nodiv = new TreeSet<Integer>();
 		for (int i = 0; i < s.size(); i++) {
 			for (int j = i + 1; j < s.size(); j++) {
-				a.add(s.get(i) + s.get(j));
+				if ((s.get(i) + s.get(j)) % k != 0) {
+					count++;
+					nodiv.add(s.get(i));
+				}
 			}
 
 		}
-		System.out.println(a);
+		System.out.println(nodiv);
+		return count;
 		
 	}
 }

@@ -14,8 +14,8 @@ public class App {
 			  s.add(i, vector[i]);
 		  }
 		  
-		  NonDivisibleSubset.nonDivisibleSubset(k, s);
-		
+		  int result = NonDivisibleSubset.nonDivisibleSubset(k, s);
+		System.out.println(result);
 		  
 	}
 }
